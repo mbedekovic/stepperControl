@@ -75,4 +75,54 @@ void gpio_init(void)
 		GPIO_WriteBit(MOTOR2_GPIOx, MOTOR2_MS1, Bit_SET);
 		GPIO_WriteBit(MOTOR2_GPIOx, MOTOR2_MS2, Bit_RESET);
 		GPIO_WriteBit(MOTOR2_GPIOx, MOTOR2_MS3, Bit_RESET);
+		
+	//Motor 3 pin init 
+	RCC_AHB1PeriphClockCmd(MOTOR3_RCC_GPIOx, ENABLE);		//Motor 3 uses pins from GPIOA, GPIOC and GPIOD periph
+		//Dir pin motor3
+		GPIOStruct.GPIO_Pin = MOTOR3_DIR;
+		GPIO_Init(MOTOR3_GPIOx_DIR, &GPIOStruct);
+		//Step pin motor3
+		GPIOStruct.GPIO_Pin = MOTOR3_STEP;
+		GPIO_Init(MOTOR3_GPIOx_STP_MS1, &GPIOStruct);
+		//MS1 motor3
+		GPIOStruct.GPIO_Pin = MOTOR3_MS1;
+		GPIO_Init(MOTOR3_GPIOx_STP_MS1, &GPIOStruct);
+		//MS2 motor3
+		GPIOStruct.GPIO_Pin = MOTOR3_MS2;
+		GPIO_Init(MOTOR3_GPIOx_MS23, &GPIOStruct);
+		//MS3 motor3
+		GPIOStruct.GPIO_Pin = MOTOR3_MS3;
+		GPIO_Init(MOTOR3_GPIOx_MS23, &GPIOStruct);		
+		
+		//Reset dir pin
+		GPIO_WriteBit(MOTOR3_GPIOx_DIR, MOTOR3_DIR, Bit_RESET);
+		//Setting stepper driver in half step mode (400 pulses per revolution)
+		GPIO_WriteBit(MOTOR3_GPIOx_STP_MS1, MOTOR3_MS1, Bit_SET);
+		GPIO_WriteBit(MOTOR3_GPIOx_MS23, MOTOR3_MS2, Bit_RESET);
+		GPIO_WriteBit(MOTOR3_GPIOx_MS23, MOTOR3_MS3, Bit_RESET);
+		
+	//Motor 4 pin init 
+	RCC_AHB1PeriphClockCmd(MOTOR4_RCC_GPIOx, ENABLE);
+		//Dir pin motor4
+		GPIOStruct.GPIO_Pin = MOTOR4_DIR;
+		GPIO_Init(MOTOR4_GPIOx, &GPIOStruct);
+		//Step pin motor4
+		GPIOStruct.GPIO_Pin = MOTOR4_STEP;
+		GPIO_Init(MOTOR4_GPIOx, &GPIOStruct);
+		//MS1 motor4
+		GPIOStruct.GPIO_Pin = MOTOR4_MS1;
+		GPIO_Init(MOTOR4_GPIOx, &GPIOStruct);
+		//MS2 motor4
+		GPIOStruct.GPIO_Pin = MOTOR4_MS2;
+		GPIO_Init(MOTOR4_GPIOx, &GPIOStruct);
+		//MS3 motor4 
+		GPIOStruct.GPIO_Pin = MOTOR4_MS3;
+		GPIO_Init(MOTOR4_GPIOx, &GPIOStruct);
+		
+		//Reset dir pin
+		GPIO_WriteBit(MOTOR4_GPIOx, MOTOR4_DIR, Bit_RESET);
+		//Setting stepper driver in half step mode (400 pulses per revolution)
+		GPIO_WriteBit(MOTOR4_GPIOx, MOTOR4_MS1, Bit_SET);
+		GPIO_WriteBit(MOTOR4_GPIOx, MOTOR4_MS2, Bit_RESET);
+		GPIO_WriteBit(MOTOR4_GPIOx, MOTOR4_MS3, Bit_RESET);
 }

@@ -300,7 +300,7 @@ void TIM4_IRQHandler(void)
 		{
 			bitValue2 = (bitValue2 == Bit_RESET) ? Bit_SET : Bit_RESET;
 			GPIO_WriteBit(MOTOR2_GPIOx, MOTOR2_STEP, bitValue2);
-			GPIO_WriteBit(GPIOD , GPIO_Pin_13, bitValue);	
+			//GPIO_WriteBit(GPIOD , GPIO_Pin_13, bitValue);	
 			
 			if(bitValue2 == Bit_RESET)
 			{
@@ -352,8 +352,8 @@ void TIM4_IRQHandler(void)
 		if(delta3 != -1)
 		{
 			bitValue3 = (bitValue3 == Bit_RESET) ? Bit_SET : Bit_RESET;
-			GPIO_WriteBit(MOTOR2_GPIOx, MOTOR2_STEP, bitValue3);
-			GPIO_WriteBit(GPIOD , GPIO_Pin_13, bitValue);	
+			GPIO_WriteBit(MOTOR3_GPIOx_STP_MS1, MOTOR3_STEP, bitValue3);
+			//GPIO_WriteBit(GPIOD , GPIO_Pin_13, bitValue);	
 			
 			if(bitValue3 == Bit_RESET)
 			{
@@ -371,11 +371,11 @@ void TIM4_IRQHandler(void)
 		//Set direction pin properly
 		if(direction3 == 1)
 		{
-			GPIO_WriteBit(MOTOR2_GPIOx , MOTOR2_DIR , Bit_RESET);
+			GPIO_WriteBit(MOTOR3_GPIOx_DIR , MOTOR3_DIR , Bit_RESET);
 		}
 		else if(direction3 == -1)
 		{
-			GPIO_WriteBit(MOTOR2_GPIOx , MOTOR2_DIR , Bit_SET);
+			GPIO_WriteBit(MOTOR3_GPIOx_DIR , MOTOR3_DIR , Bit_SET);
 		}
 		
 		//Set next OC ISR time 
@@ -405,8 +405,8 @@ void TIM4_IRQHandler(void)
 		if(delta4 != -1)
 		{
 			bitValue4 = (bitValue4 == Bit_RESET) ? Bit_SET : Bit_RESET;
-			GPIO_WriteBit(MOTOR2_GPIOx, MOTOR2_STEP, bitValue4);
-			GPIO_WriteBit(GPIOD , GPIO_Pin_13, bitValue);	
+			GPIO_WriteBit(MOTOR4_GPIOx, MOTOR4_STEP, bitValue4);
+			//GPIO_WriteBit(GPIOD , GPIO_Pin_13, bitValue);	
 			
 			if(bitValue4 == Bit_RESET)
 			{
@@ -424,11 +424,11 @@ void TIM4_IRQHandler(void)
 		//Set direction pin properly
 		if(direction4 == 1)
 		{
-			GPIO_WriteBit(MOTOR2_GPIOx , MOTOR2_DIR , Bit_RESET);
+			GPIO_WriteBit(MOTOR4_GPIOx , MOTOR4_DIR , Bit_RESET);
 		}
 		else if(direction4 == -1)
 		{
-			GPIO_WriteBit(MOTOR2_GPIOx , MOTOR2_DIR , Bit_SET);
+			GPIO_WriteBit(MOTOR4_GPIOx , MOTOR4_DIR , Bit_SET);
 		}
 		
 		//Set next OC ISR time 

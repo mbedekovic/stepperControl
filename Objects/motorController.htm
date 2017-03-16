@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\motorController.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\motorController.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Thu Mar 16 12:54:55 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Thu Mar 16 14:10:51 2017
 <BR><P>
 <H3>Maximum Stack Usage =        240 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -742,7 +742,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40_41xxx.o(.text)
 </UL>
-<P><STRONG><a name="[2a]"></a>TIM4_IRQHandler</STRONG> (Thumb, 1160 bytes, Stack size 24 bytes, controlalgorithm.o(i.TIM4_IRQHandler))
+<P><STRONG><a name="[2a]"></a>TIM4_IRQHandler</STRONG> (Thumb, 1130 bytes, Stack size 24 bytes, controlalgorithm.o(i.TIM4_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = TIM4_IRQHandler &rArr; xQueueReceiveFromISR &rArr; xTaskRemoveFromEventList
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
@@ -912,7 +912,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskMotorController
 </UL>
 
-<P><STRONG><a name="[a4]"></a>gpio_init</STRONG> (Thumb, 340 bytes, Stack size 16 bytes, gpio.o(i.gpio_init))
+<P><STRONG><a name="[a4]"></a>gpio_init</STRONG> (Thumb, 568 bytes, Stack size 16 bytes, gpio.o(i.gpio_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = gpio_init &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StructInit
