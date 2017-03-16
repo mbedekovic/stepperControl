@@ -38,7 +38,7 @@ I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x573F1800)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x573F17FB)
 F (.\Lib\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f40_41xxx.s)(0x5878DC84)(--cpu Cortex-M4.fp -g --apcs=interwork -I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora industrijskih ugradbenih sustava\Projekt\stepperControl\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 521" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1"--list .\listings\startup_stm32f40_41xxx.lst --xref -o .\objects\startup_stm32f40_41xxx.o --depend .\objects\startup_stm32f40_41xxx.d)
 F (.\STM_Peripheral_Lib_v1.7.1.lib)(0x584C006A)()
-F (.\main.c)(0x5881DB8F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\ -I Lib\CMSIS\Include -I Lib\CMSIS\Device\ST\STM32F4xx\Include -I Lib\STM32F4xx_StdPeriph_Driver\inc -I FreeRTOS\include -I FreeRTOS\portable\keil\ARM_CM4F-I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora industrijskih ugradbenih sustava\Projekt\stepperControl\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE="8000000" --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x58CA7D0A)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\ -I Lib\CMSIS\Include -I Lib\CMSIS\Device\ST\STM32F4xx\Include -I Lib\STM32F4xx_StdPeriph_Driver\inc -I FreeRTOS\include -I FreeRTOS\portable\keil\ARM_CM4F-I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora industrijskih ugradbenih sustava\Projekt\stepperControl\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE="8000000" --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\main.h)(0x5880C364)
 I (FreeRTOS\include\FreeRTOS.h)(0x573F3A16)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x574E9286)
@@ -86,13 +86,13 @@ I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x573F17FB)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x573F17FB)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x573F1800)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x573F17FB)
-I (.\usart.h)(0x5880C38C)
+I (.\usart.h)(0x58CA5CC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574E9286)
 I (.\timer.h)(0x5880B972)
 I (.\gpio.h)(0x5880EF62)
 I (.\controlAlgorithm.h)(0x5880B970)
-F (.\usart.c)(0x5880C584)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\ -I Lib\CMSIS\Include -I Lib\CMSIS\Device\ST\STM32F4xx\Include -I Lib\STM32F4xx_StdPeriph_Driver\inc -I FreeRTOS\include -I FreeRTOS\portable\keil\ARM_CM4F-I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora industrijskih ugradbenih sustava\Projekt\stepperControl\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE="8000000" --C99-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
-I (.\usart.h)(0x5880C38C)
+F (.\usart.c)(0x58CA5DAF)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\ -I Lib\CMSIS\Include -I Lib\CMSIS\Device\ST\STM32F4xx\Include -I Lib\STM32F4xx_StdPeriph_Driver\inc -I FreeRTOS\include -I FreeRTOS\portable\keil\ARM_CM4F-I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora industrijskih ugradbenih sustava\Projekt\stepperControl\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE="8000000" --C99-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
+I (.\usart.h)(0x58CA5CC2)
 I (Lib\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x573CA273)
 I (Lib\CMSIS\Include\core_cm4.h)(0x573CA1AC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E9286)
@@ -140,7 +140,7 @@ I (FreeRTOS\include\list.h)(0x573F3A16)
 I (FreeRTOS\include\queue.h)(0x573F3A16)
 I (FreeRTOS\include\semphr.h)(0x573F3A16)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574E9286)
-F (.\timer.c)(0x5880C756)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\ -I Lib\CMSIS\Include -I Lib\CMSIS\Device\ST\STM32F4xx\Include -I Lib\STM32F4xx_StdPeriph_Driver\inc -I FreeRTOS\include -I FreeRTOS\portable\keil\ARM_CM4F-I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora industrijskih ugradbenih sustava\Projekt\stepperControl\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE="8000000" --C99-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
+F (.\timer.c)(0x58CA7C43)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\ -I Lib\CMSIS\Include -I Lib\CMSIS\Device\ST\STM32F4xx\Include -I Lib\STM32F4xx_StdPeriph_Driver\inc -I FreeRTOS\include -I FreeRTOS\portable\keil\ARM_CM4F-I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora industrijskih ugradbenih sustava\Projekt\stepperControl\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE="8000000" --C99-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
 I (.\timer.h)(0x5880B972)
 I (Lib\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x573CA273)
 I (Lib\CMSIS\Include\core_cm4.h)(0x573CA1AC)
@@ -176,7 +176,7 @@ I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x573F17FB)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x573F17FB)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x573F1800)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x573F17FB)
-F (.\controlAlgorithm.c)(0x5880B920)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\ -I Lib\CMSIS\Include -I Lib\CMSIS\Device\ST\STM32F4xx\Include -I Lib\STM32F4xx_StdPeriph_Driver\inc -I FreeRTOS\include -I FreeRTOS\portable\keil\ARM_CM4F-I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora industrijskih ugradbenih sustava\Projekt\stepperControl\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE="8000000" --C99-o .\objects\controlalgorithm.o --omf_browse .\objects\controlalgorithm.crf --depend .\objects\controlalgorithm.d)
+F (.\controlAlgorithm.c)(0x58CA7BBF)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I .\ -I Lib\CMSIS\Include -I Lib\CMSIS\Device\ST\STM32F4xx\Include -I Lib\STM32F4xx_StdPeriph_Driver\inc -I FreeRTOS\include -I FreeRTOS\portable\keil\ARM_CM4F-I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora industrijskih ugradbenih sustava\Projekt\stepperControl\RTE"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DHSE_VALUE="8000000" --C99-o .\objects\controlalgorithm.o --omf_browse .\objects\controlalgorithm.crf --depend .\objects\controlalgorithm.d)
 I (.\controlAlgorithm.h)(0x5880B970)
 I (Lib\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x573CA273)
 I (Lib\CMSIS\Include\core_cm4.h)(0x573CA1AC)
@@ -224,7 +224,7 @@ I (FreeRTOS\include\task.h)(0x573F3A16)
 I (FreeRTOS\include\list.h)(0x573F3A16)
 I (FreeRTOS\include\queue.h)(0x573F3A16)
 I (.\timer.h)(0x5880B972)
-I (.\usart.h)(0x5880C38C)
+I (.\usart.h)(0x58CA5CC2)
 I (FreeRTOS\include\semphr.h)(0x573F3A16)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574E9286)
 I (.\gpio.h)(0x5880EF62)
@@ -264,7 +264,7 @@ I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x573F17FB)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x573F17FB)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x573F1800)
 I (Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x573F17FB)
-F (.\usart.h)(0x5880C38C)()
+F (.\usart.h)(0x58CA5CC2)()
 F (.\main.h)(0x5880C364)()
 F (.\timer.h)(0x5880B972)()
 F (.\controlAlgorithm.h)(0x5880B970)()

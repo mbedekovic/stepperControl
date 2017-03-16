@@ -52,10 +52,10 @@ int main(void)
 	//Queue for setup task
 	xQueueMotorSetup = xQueueCreate(3, sizeof(motor_setup_t));
 	//Queues for setpoint tasks 
-	xQueueMotorSetpoint[0] = xQueueCreate(1, sizeof(uint32_t));
-	xQueueMotorSetpoint[1] = xQueueCreate(1, sizeof(uint32_t));
-	xQueueMotorSetpoint[2] = xQueueCreate(1, sizeof(uint32_t));
-	xQueueMotorSetpoint[3] = xQueueCreate(1, sizeof(uint32_t));
+	xQueueMotorSetpoint[0] = xQueueCreate(1, sizeof(int32_t));
+	xQueueMotorSetpoint[1] = xQueueCreate(1, sizeof(int32_t));
+	xQueueMotorSetpoint[2] = xQueueCreate(1, sizeof(int32_t));
+	xQueueMotorSetpoint[3] = xQueueCreate(1, sizeof(int32_t));
 	//Queues for timer output compare ISR 
 	xQueueMotorISR[0] = xQueueCreate(1, sizeof(ISR_message_t));
 	xQueueMotorISR[1] = xQueueCreate(1, sizeof(ISR_message_t));
@@ -100,6 +100,22 @@ int main(void)
 			(const char*)"MOTOR2_TASK",
 			configMINIMAL_STACK_SIZE,
 			(void *)2,
+			2,
+			NULL); 
+			
+		xTaskCreate(
+			 vTaskMotorController,
+			(const char*)"MOTOR3_TASK",
+			configMINIMAL_STACK_SIZE,
+			(void *)3,
+			2,
+			NULL); 
+			
+		xTaskCreate(
+			 vTaskMotorController,
+			(const char*)"MOTOR4_TASK",
+			configMINIMAL_STACK_SIZE,
+			(void *)4,
 			2,
 			NULL); 
 			

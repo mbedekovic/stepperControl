@@ -176,7 +176,7 @@ void vDecodeMsgTask(void *pvParameters)
 			case('C'):
 			{
 				//Send to motor setpoint queues
-					uint32_t ref = data.broj.moto1;
+				int32_t ref = data.broj.moto1;
 				//Send to appropriate setpoint queues. Queues hold only 1 element,
 				// and xQueueOverwrite allways inserts the last received value to 
 				// queue even if it's full (overwrite)
@@ -185,6 +185,14 @@ void vDecodeMsgTask(void *pvParameters)
 												
 				ref = data.broj.moto2;
 				xQueueOverwrite(xQueueMotorSetpoint[1],
+												(void *)&ref);
+				
+				ref = data.broj.moto3;
+				xQueueOverwrite(xQueueMotorSetpoint[2],
+												(void *)&ref);
+				
+				ref = data.broj.moto4;
+				xQueueOverwrite(xQueueMotorSetpoint[3],
 												(void *)&ref);
 				
 				//In final version send to all setpoint queues

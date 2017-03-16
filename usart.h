@@ -36,10 +36,10 @@ extern xTaskHandle xDecodeMsgTaskHandle;
 //sizeof(motor_control_t) = 20 -> 3 padding bytes added for word aligment of struct 
 typedef struct
 {
-	uint32_t moto1;
-	uint32_t moto2;
-	uint32_t moto3;
-	uint32_t moto4;
+	int32_t moto1;
+	int32_t moto2;
+	int32_t moto3;
+	int32_t moto4;
 	uint8_t	 cmd;
 } motor_control_t;
 

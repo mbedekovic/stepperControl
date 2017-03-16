@@ -3,10 +3,9 @@
 
 int32_t pulsCnt1 = 0;
 int32_t pulsCnt2 = 0;
-#ifdef FULL_SETUP
 int32_t pulsCnt3 = 0;
 int32_t pulsCnt4 = 0;
-#endif 
+
 
 /**
 	* \brief This function is implements stepper motor controller. Controller 
@@ -32,7 +31,7 @@ void vTaskMotorController(void *pvParameters)
 	int32_t e				 = 0;			//Control error signal
 	TickType_t xLastWakeTime = xTaskGetTickCount();			//For vTaskDelay function 
 	motor_setup_t setupMsg;															//Container for received msg from motor setup queue
-	uint32_t setpointMsg;																//Container for received msg from motor setpoint queue 
+	int32_t setpointMsg;																//Container for received msg from motor setpoint queue 
 	
 	
 	//helper variables
@@ -54,7 +53,7 @@ void vTaskMotorController(void *pvParameters)
 	{
 		//For control loop timing vTaskDelayUntil function is used for convenience and 
 		// it offers sufficient time accuracy
-		vTaskDelayUntil(&xLastWakeTime,2/portTICK_PERIOD_MS);
+		vTaskDelayUntil(&xLastWakeTime,1000/(CONTROL_LOOP_FREQUENCY*portTICK_PERIOD_MS));
 		
 		//Checking if there are new regulator setpoints in the setpoint queue
 		if(xQueueReceive(xQueueMotorSetup,(void *)&setupMsg,(TickType_t) 0) == pdTRUE)
@@ -217,10 +216,16 @@ void TIM4_IRQHandler(void)
 {
 	static BitAction bitValue = Bit_RESET;
 	static BitAction bitValue2 = Bit_RESET;
+	static BitAction bitValue3 = Bit_RESET;
+	static BitAction bitValue4 = Bit_RESET;
 	static int32_t delta			= PERIOD;
 	static int32_t delta2			= PERIOD;
+	static int32_t delta3			= PERIOD;
+	static int32_t delta4			= PERIOD;
+	static int16_t direction  = 0;
 	static int16_t direction2 = 0;
-	static int16_t		direction = 0;
+	static int16_t direction3 = 0;
+	static int16_t direction4 = 0;
 	BaseType_t xTaskWokenByReceive = pdFALSE;
 	ISR_message_t	rxMsg;
 	
@@ -334,6 +339,114 @@ void TIM4_IRQHandler(void)
 		TIM_ClearITPendingBit(TIM4, TIM_IT_CC2);
 		
 	}
+	
+	//check if CC3 caused interupt 
+	if(TIM_GetITStatus(TIM4,TIM_IT_CC3) != RESET)
+	{
+		if(xQueueReceiveFromISR(xQueueMotorISR[2], (void *)&rxMsg, &xTaskWokenByReceive) == pdTRUE)
+		{
+			delta3 		 = rxMsg.delta;
+			direction3 = rxMsg.direction;
+		}
+		
+		if(delta3 != -1)
+		{
+			bitValue3 = (bitValue3 == Bit_RESET) ? Bit_SET : Bit_RESET;
+			GPIO_WriteBit(MOTOR2_GPIOx, MOTOR2_STEP, bitValue3);
+			GPIO_WriteBit(GPIOD , GPIO_Pin_13, bitValue);	
+			
+			if(bitValue3 == Bit_RESET)
+			{
+				if(direction3 == 1)
+				{
+					pulsCnt3 = pulsCnt3 + 1;
+				}
+				else if (direction3 == -1)
+				{
+					pulsCnt3 = pulsCnt3 - 1;
+				}
+			}
+		}
+		
+		//Set direction pin properly
+		if(direction3 == 1)
+		{
+			GPIO_WriteBit(MOTOR2_GPIOx , MOTOR2_DIR , Bit_RESET);
+		}
+		else if(direction3 == -1)
+		{
+			GPIO_WriteBit(MOTOR2_GPIOx , MOTOR2_DIR , Bit_SET);
+		}
+		
+		//Set next OC ISR time 
+		uint32_t curTim = TIM_GetCounter(TIM4);
+		if (delta3 != -1)
+		{
+			TIM_SetCompare3(TIM4,(curTim+delta3)%PERIOD);
+		}
+		else
+		{
+			TIM_SetCompare3(TIM4,(curTim+PERIOD)%PERIOD);
+		}
+		//Clear pending bit
+		TIM_ClearITPendingBit(TIM4, TIM_IT_CC3);
+		
+	}
+	
+	//check if CC4 caused interupt 
+	if(TIM_GetITStatus(TIM4,TIM_IT_CC4) != RESET)
+	{
+		if(xQueueReceiveFromISR(xQueueMotorISR[3], (void *)&rxMsg, &xTaskWokenByReceive) == pdTRUE)
+		{
+			delta4 		 = rxMsg.delta;
+			direction4 = rxMsg.direction;
+		}
+		
+		if(delta4 != -1)
+		{
+			bitValue4 = (bitValue4 == Bit_RESET) ? Bit_SET : Bit_RESET;
+			GPIO_WriteBit(MOTOR2_GPIOx, MOTOR2_STEP, bitValue4);
+			GPIO_WriteBit(GPIOD , GPIO_Pin_13, bitValue);	
+			
+			if(bitValue4 == Bit_RESET)
+			{
+				if(direction4 == 1)
+				{
+					pulsCnt4 = pulsCnt4 + 1;
+				}
+				else if (direction4 == -1)
+				{
+					pulsCnt4 = pulsCnt4 - 1;
+				}
+			}
+		}
+		
+		//Set direction pin properly
+		if(direction4 == 1)
+		{
+			GPIO_WriteBit(MOTOR2_GPIOx , MOTOR2_DIR , Bit_RESET);
+		}
+		else if(direction4 == -1)
+		{
+			GPIO_WriteBit(MOTOR2_GPIOx , MOTOR2_DIR , Bit_SET);
+		}
+		
+		//Set next OC ISR time 
+		uint32_t curTim = TIM_GetCounter(TIM4);
+		if (delta4 != -1)
+		{
+			TIM_SetCompare4(TIM4,(curTim+delta4)%PERIOD);
+		}
+		else
+		{
+			TIM_SetCompare4(TIM4,(curTim+PERIOD)%PERIOD);
+		}
+		//Clear pending bit
+		TIM_ClearITPendingBit(TIM4, TIM_IT_CC4);
+		
+	}
+	
+	
 	//Call task scheduler if there is a task unblocked by reading from queue 
 	//In this project it isn't necessary but we included it for completeness
 	if( xTaskWokenByReceive != pdFALSE)
@@ -363,7 +476,6 @@ int32_t getPulsCnt(uint32_t num)
 	{
 		ret = pulsCnt2;
 	}
-	#ifdef FULL_SETUP
 	if(num == 3)
 	{
 		ret = pulsCnt3;
@@ -372,7 +484,6 @@ int32_t getPulsCnt(uint32_t num)
 	{
 		ret = pulsCnt4;	
 	}
-	#endif
 	NVIC_EnableIRQ(TIM4_IRQn);
 	return ret;
 }
