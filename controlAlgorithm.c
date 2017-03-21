@@ -244,7 +244,7 @@ void TIM4_IRQHandler(void)
 		if(delta != -1)
 		{
 			bitValue = (bitValue == Bit_RESET) ? Bit_SET : Bit_RESET;
-			GPIO_WriteBit(GPIOD , GPIO_Pin_12, bitValue);															//<------------- delete this in final form 
+			//GPIO_WriteBit(GPIOD , GPIO_Pin_12, bitValue);															//<------------- delete this in final form 
 			GPIO_WriteBit(MOTOR1_GPIOx, MOTOR1_STEP, bitValue);
 			
 			//Increment step counter, when direction is 0 there is no increment 

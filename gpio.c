@@ -6,22 +6,22 @@ void gpio_init(void)
 		GPIO_InitTypeDef GPIOStruct;
 		GPIO_StructInit(&GPIOStruct);
 		//Turn on clock for peripheral 
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD , ENABLE);
+//	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD , ENABLE);
 		//Pin configuration 
 		GPIOStruct.GPIO_Pin		= GPIO_Pin_12;
 		GPIOStruct.GPIO_Mode 	= GPIO_Mode_OUT;
 		GPIOStruct.GPIO_OType = GPIO_OType_PP; 
 		GPIOStruct.GPIO_PuPd 	= GPIO_PuPd_NOPULL;
 		GPIOStruct.GPIO_Speed	= GPIO_Speed_50MHz;
-	GPIO_Init(GPIOD, &GPIOStruct);
+	//GPIO_Init(GPIOD, &GPIOStruct);
 	//Green LED
-	GPIO_WriteBit(GPIOD, GPIO_Pin_12, Bit_RESET);
+	//GPIO_WriteBit(GPIOD, GPIO_Pin_12, Bit_RESET);
 	//Blue LED
-	GPIOStruct.GPIO_Pin    	= GPIO_Pin_15;
-	GPIO_Init(GPIOD,&GPIOStruct);
+	//GPIOStruct.GPIO_Pin    	= GPIO_Pin_15;
+	//GPIO_Init(GPIOD,&GPIOStruct);
 	//Orange LED
-	GPIOStruct.GPIO_Pin    	= GPIO_Pin_13;
-	GPIO_Init(GPIOD,&GPIOStruct);
+	//GPIOStruct.GPIO_Pin    	= GPIO_Pin_13;
+	//GPIO_Init(GPIOD,&GPIOStruct);
 	
 	RCC_AHB1PeriphClockCmd(MOTOR1_RCC_GPIOx, ENABLE);
 		//Dir pin
@@ -41,8 +41,8 @@ void gpio_init(void)
 		GPIO_Init(MOTOR1_GPIOx, &GPIOStruct);
 		
 		//Blue Led
-		GPIOStruct.GPIO_Pin = GPIO_Pin_15;
-		GPIO_Init(MOTOR1_GPIOx, &GPIOStruct);
+		//GPIOStruct.GPIO_Pin = GPIO_Pin_15;
+		//GPIO_Init(MOTOR1_GPIOx, &GPIOStruct);
 		
 		//Reset dir pin
 		GPIO_WriteBit(MOTOR1_GPIOx, MOTOR1_DIR, Bit_RESET);
