@@ -40,13 +40,7 @@
 .\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h
 .\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\misc.h
-.\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h
-.\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h
-.\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
-.\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
-.\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
-.\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\main.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash_ramfunc.h
 .\objects\main.o: .\usart.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: .\timer.h

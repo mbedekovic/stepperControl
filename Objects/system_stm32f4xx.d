@@ -27,10 +27,4 @@
 .\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h
 .\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\misc.h
-.\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h
-.\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h
-.\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
-.\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
-.\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
-.\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\system_stm32f4xx.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash_ramfunc.h

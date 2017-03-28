@@ -14,5 +14,6 @@
 #include <gpio.h>
 #include <controlAlgorithm.h>
 
-
+//STM32F40_41xxx za stari SMT32F407VGx
+//STM32F411xx za novi SMT32F411VET6 procesor 
 #endif

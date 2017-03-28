@@ -28,13 +28,7 @@
 .\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h
 .\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\misc.h
-.\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h
-.\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h
-.\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
-.\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
-.\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
-.\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\usart.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash_ramfunc.h
 .\objects\usart.o: FreeRTOS\include\FreeRTOS.h
 .\objects\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\usart.o: FreeRTOS\include\FreeRTOSConfig.h

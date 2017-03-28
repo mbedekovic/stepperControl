@@ -28,13 +28,7 @@
 .\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h
 .\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\misc.h
-.\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h
-.\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h
-.\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
-.\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
-.\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
-.\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\controlalgorithm.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash_ramfunc.h
 .\objects\controlalgorithm.o: FreeRTOS\include\FreeRTOS.h
 .\objects\controlalgorithm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\controlalgorithm.o: FreeRTOS\include\FreeRTOSConfig.h

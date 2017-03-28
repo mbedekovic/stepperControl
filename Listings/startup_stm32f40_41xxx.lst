@@ -871,11 +871,11 @@ Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=.\objects\startup_stm32f40_41xxx.d -o.\objects\startup_stm32f40
 _41xxx.o -I"C:\Users\Matija\Documents\9. senestar\[PPIUS] Programska potpora in
 dustrijskih ugradbenih sustava\Projekt\stepperControl\RTE" -IC:\Keil_v5\ARM\PAC
-K\ARM\CMSIS\4.5.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.10.0
-\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__UVISION_VERSION SETA 
-521" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listi
-ngs\startup_stm32f40_41xxx.lst Lib\CMSIS\Device\ST\STM32F4xx\Source\Templates\a
-rm\startup_stm32f40_41xxx.s
+K\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP
+\2.10.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__UVISION_VERSIO
+N SETA 521" --predefine="_RTE_ SETA 1" --predefine="STM32F411xE SETA 1" --list=
+.\listings\startup_stm32f40_41xxx.lst Lib\CMSIS\Device\ST\STM32F4xx\Source\Temp
+lates\arm\startup_stm32f40_41xxx.s
 
 
 

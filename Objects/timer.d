@@ -28,10 +28,4 @@
 .\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h
 .\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\misc.h
-.\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h
-.\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h
-.\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
-.\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
-.\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
-.\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\timer.o: Lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash_ramfunc.h
