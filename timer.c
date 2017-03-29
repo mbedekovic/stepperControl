@@ -35,8 +35,13 @@ void TimerInit(void)
 	TIM_OC1Init(TIM4,&outputConfig);
 	
 	//Configuring timer interrupt sources 
+		//Clear pending bit from spourious interrups
 	TIM_ClearITPendingBit(TIM4,TIM_IT_CC1);
+	TIM_ClearITPendingBit(TIM4,TIM_IT_CC2);
+	TIM_ClearITPendingBit(TIM4,TIM_IT_CC3);
+	TIM_ClearITPendingBit(TIM4,TIM_IT_CC4);
 	TIM_SetCounter(TIM4,0);
+		//Enable Output comapare interrupts 
 	TIM_ITConfig(TIM4,TIM_IT_CC1,ENABLE);
 	TIM_ITConfig(TIM4,TIM_IT_Update, DISABLE);
 	TIM_ITConfig(TIM4,TIM_IT_CC2, ENABLE);

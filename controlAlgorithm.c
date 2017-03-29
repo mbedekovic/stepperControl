@@ -6,6 +6,8 @@ int32_t pulsCnt2 = 0;
 int32_t pulsCnt3 = 0;
 int32_t pulsCnt4 = 0;
 
+uint32_t beat = 0;
+
 
 /**
 	* \brief This function is implements stepper motor controller. Controller 
@@ -155,7 +157,13 @@ void vTaskMotorController(void *pvParameters)
 			}
 		//save new speed as actual speed for next step 
 			wAct = wNew;
+			
+			if(motorNumber == 4)
+			{
+				beat++;
+			}
 	}
+
 	
 	
 }	
@@ -405,7 +413,7 @@ void TIM4_IRQHandler(void)
 		if(delta4 != -1)
 		{
 			bitValue4 = (bitValue4 == Bit_RESET) ? Bit_SET : Bit_RESET;
-			GPIO_WriteBit(MOTOR4_GPIOx, MOTOR4_STEP, bitValue4);
+			GPIO_WriteBit(MOTOR4_GPIOx_DIR_STP, MOTOR4_STEP, bitValue4);
 			//GPIO_WriteBit(GPIOD , GPIO_Pin_13, bitValue);	
 			
 			if(bitValue4 == Bit_RESET)
@@ -424,11 +432,11 @@ void TIM4_IRQHandler(void)
 		//Set direction pin properly
 		if(direction4 == 1)
 		{
-			GPIO_WriteBit(MOTOR4_GPIOx , MOTOR4_DIR , Bit_RESET);
+			GPIO_WriteBit(MOTOR4_GPIOx_DIR_STP , MOTOR4_DIR , Bit_RESET);
 		}
 		else if(direction4 == -1)
 		{
-			GPIO_WriteBit(MOTOR4_GPIOx , MOTOR4_DIR , Bit_SET);
+			GPIO_WriteBit(MOTOR4_GPIOx_DIR_STP , MOTOR4_DIR , Bit_SET);
 		}
 		
 		//Set next OC ISR time 

@@ -105,10 +105,10 @@ void gpio_init(void)
 	RCC_AHB1PeriphClockCmd(MOTOR4_RCC_GPIOx, ENABLE);
 		//Dir pin motor4
 		GPIOStruct.GPIO_Pin = MOTOR4_DIR;
-		GPIO_Init(MOTOR4_GPIOx, &GPIOStruct);
+		GPIO_Init(MOTOR4_GPIOx_DIR_STP, &GPIOStruct);
 		//Step pin motor4
 		GPIOStruct.GPIO_Pin = MOTOR4_STEP;
-		GPIO_Init(MOTOR4_GPIOx, &GPIOStruct);
+		GPIO_Init(MOTOR4_GPIOx_DIR_STP, &GPIOStruct);
 		//MS1 motor4
 		GPIOStruct.GPIO_Pin = MOTOR4_MS1;
 		GPIO_Init(MOTOR4_GPIOx, &GPIOStruct);

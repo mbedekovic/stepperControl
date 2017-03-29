@@ -18,6 +18,7 @@
 #define MOTOR3_GPIOx_STP_MS1		GPIOC
 #define MOTOR3_GPIOx_MS23				GPIOA
 #define MOTOR4_GPIOx						GPIOE
+#define MOTOR4_GPIOx_DIR_STP		GPIOD
 
 // Pin numbers for motors
 	//Motor 1 
@@ -43,7 +44,7 @@
 
 	//Motor 4
 #define MOTOR4_DIR							GPIO_Pin_1
-#define MOTOR4_STEP							GPIO_Pin_2
+#define MOTOR4_STEP							GPIO_Pin_3
 #define MOTOR4_MS1							GPIO_Pin_3
 #define MOTOR4_MS2							GPIO_Pin_4
 #define MOTOR4_MS3							GPIO_Pin_5
