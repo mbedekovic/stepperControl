@@ -18,10 +18,13 @@ uint32_t beat = 0;
 void vTaskMotorController(void *pvParameters)
 {
 	//Default controler params
-	int32_t P = 2;
-	int32_t rLim = (50*100/CONTROL_LOOP_FREQUENCY);
-	int32_t dLim	=	(50*100/CONTROL_LOOP_FREQUENCY);
-	int32_t wMax	= 1500;
+	float P = 10.0;
+	const int32_t mAcc = 5000;
+	const int32_t mDac = 5000;
+	
+	int32_t rLim =  (mAcc/CONTROL_LOOP_FREQUENCY);
+	int32_t dLim	=	(mDac/CONTROL_LOOP_FREQUENCY);
+	int32_t wMax	= 800;
 	
 	//Position and angular velocity 
 	int32_t stepAct  = 0;			//Actual step count of motor [pulse]
@@ -55,7 +58,7 @@ void vTaskMotorController(void *pvParameters)
 	{
 		//For control loop timing vTaskDelayUntil function is used for convenience and 
 		// it offers sufficient time accuracy
-		vTaskDelayUntil(&xLastWakeTime,1000/(CONTROL_LOOP_FREQUENCY*portTICK_PERIOD_MS));
+		vTaskDelayUntil(&xLastWakeTime,(1000/(CONTROL_LOOP_FREQUENCY))/portTICK_PERIOD_MS);
 		
 		//Checking if there are new regulator setpoints in the setpoint queue
 		if(xQueueReceive(xQueueMotorSetup,(void *)&setupMsg,(TickType_t) 0) == pdTRUE)
@@ -115,7 +118,11 @@ void vTaskMotorController(void *pvParameters)
 		}
 		else
 		{
-			delta = (PERIOD/(2*absVal(wNew)));	//2 because it has to turn the step pin on and off in real delta time
+			delta = (TIMER_FREQUENCY*PERIOD/(2*absVal(wNew)));	//2 because it has to turn the step pin on and off in real delta time
+			if(delta > PERIOD)
+			{
+				delta = PERIOD;
+			}
 			direction = sign(wNew);
 		}
 		

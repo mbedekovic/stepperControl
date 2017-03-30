@@ -126,3 +126,4 @@ void gpio_init(void)
 		GPIO_WriteBit(MOTOR4_GPIOx, MOTOR4_MS2, Bit_RESET);
 		GPIO_WriteBit(MOTOR4_GPIOx, MOTOR4_MS3, Bit_RESET);
 }
+
