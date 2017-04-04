@@ -31,7 +31,7 @@ extern xTaskHandle xDecodeMsgTaskHandle;
 	//Motor control setpoint msg queues
 	extern xQueueHandle xQueueMotorSetpoint[4];
 	//Queue for passing controller setup message from UART to motor controllers 
-	extern xQueueHandle xQueueMotorSetup;
+	extern xQueueHandle xQueueMotorSetup[4];
 
 //sizeof(motor_control_t) = 20 -> 3 padding bytes added for word aligment of struct 
 typedef struct

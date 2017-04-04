@@ -28,7 +28,7 @@ typedef struct
 	//Queue for sending delay between pulses to TIM4 ISR
 	extern xQueueHandle xQueueMotorISR[4];
 	//Queue for passing controller setup message from UART to motor controllers 
-	extern xQueueHandle xQueueMotorSetup;
+	extern xQueueHandle xQueueMotorSetup[4];
 	
 	
 //Function declarations

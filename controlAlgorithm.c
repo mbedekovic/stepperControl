@@ -61,7 +61,7 @@ void vTaskMotorController(void *pvParameters)
 		vTaskDelayUntil(&xLastWakeTime,(1000/(CONTROL_LOOP_FREQUENCY))/portTICK_PERIOD_MS);
 		
 		//Checking if there are new regulator setpoints in the setpoint queue
-		if(xQueueReceive(xQueueMotorSetup,(void *)&setupMsg,(TickType_t) 0) == pdTRUE)
+		if(xQueueReceive(xQueueMotorSetup[motorNumber-1],(void *)&setupMsg,(TickType_t) 0) == pdTRUE)
 		{
 			//Refresh controler parameters
 			P = setupMsg.P;

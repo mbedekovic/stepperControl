@@ -39,7 +39,7 @@ configASSERT( 0 ); // Latch on any failure / error.
 //Queue Handles
  xQueueHandle xQueueMotorISR[4];
  xQueueHandle xQueueMotorSetpoint[4];
- xQueueHandle xQueueMotorSetup;
+ xQueueHandle xQueueMotorSetup[4];
 
 int main(void)
 {
@@ -50,7 +50,10 @@ int main(void)
 	
 	
 	//Queue for setup task
-	xQueueMotorSetup = xQueueCreate(3, sizeof(motor_setup_t));
+	xQueueMotorSetup[0] = xQueueCreate(1, sizeof(motor_setup_t));
+	xQueueMotorSetup[1] = xQueueCreate(1, sizeof(motor_setup_t));
+	xQueueMotorSetup[2] = xQueueCreate(1, sizeof(motor_setup_t));
+	xQueueMotorSetup[3] = xQueueCreate(1, sizeof(motor_setup_t));
 	//Queues for setpoint tasks 
 	xQueueMotorSetpoint[0] = xQueueCreate(1, sizeof(int32_t));
 	xQueueMotorSetpoint[1] = xQueueCreate(1, sizeof(int32_t));
