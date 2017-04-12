@@ -18,13 +18,13 @@ uint32_t beat = 0;
 void vTaskMotorController(void *pvParameters)
 {
 	//Default controler params
-	float P = 10.0;
+	float P = 15.0;
 	const int32_t mAcc = 5000;
 	const int32_t mDac = 5000;
 	
 	int32_t rLim =  (mAcc/CONTROL_LOOP_FREQUENCY);
 	int32_t dLim	=	(mDac/CONTROL_LOOP_FREQUENCY);
-	int32_t wMax	= 800;
+	int32_t wMax	= 1500;
 	
 	//Position and angular velocity 
 	int32_t stepAct  = 0;			//Actual step count of motor [pulse]
@@ -84,17 +84,31 @@ void vTaskMotorController(void *pvParameters)
 		wRef = e*P;
 		
 		//rate limiting 
-		if((wRef-wAct)>rLim)
+		if(e>0)
 		{
-			wNew = wAct+rLim;
+			if((wRef-wAct)>rLim)
+			{
+				wNew = wAct+rLim;
+			}
+			else
+			{
+				wNew = wRef;
+			}
 		}
-		else if((wAct - wRef) > dLim)
+		else if (e < 0)
 		{
-			wNew = wAct-dLim;
+			if((wAct - wRef) > dLim)
+			{
+				wNew = wAct-dLim;
+			}
+			else
+			{
+				wNew = wRef;
+			}
 		}
-		else
+		else if (e == 0)
 		{
-			wNew = wRef;
+			wNew = 0;
 		}
 		
 		//Saturation
