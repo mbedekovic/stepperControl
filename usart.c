@@ -220,6 +220,16 @@ void vDecodeMsgTask(void *pvParameters)
 														(void *)&setupCmd);
 				break;
 			}
+			case('M'):
+			{
+				//Set global shared pule counter variables in critical section
+				NVIC_DisableIRQ(TIM4_IRQn);
+					pulsCnt1 = data.broj.moto1;
+					pulsCnt2 = data.broj.moto2;
+					pulsCnt3 = data.broj.moto3;
+					pulsCnt4 = data.broj.moto4;
+				NVIC_EnableIRQ(TIM4_IRQn);
+			}
 			default:
 				break;
 		}

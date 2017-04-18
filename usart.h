@@ -57,5 +57,9 @@ struct __FILE
 	int dummy;
 };
 
+extern int32_t pulsCnt1;
+extern int32_t pulsCnt2;
+extern int32_t pulsCnt3;
+extern int32_t pulsCnt4;
 
 #endif
