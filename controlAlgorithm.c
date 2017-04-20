@@ -18,13 +18,13 @@ uint32_t beat = 0;
 void vTaskMotorController(void *pvParameters)
 {
 	//Default controler params
-	float P = 15.0;
-	const int32_t mAcc = 4000;
-	const int32_t mDac = 4000;
+	float P = 2;
+	const int32_t mAcc = 500;
+	const int32_t mDac = 2000;
 	
 	int32_t rLim =  (mAcc/CONTROL_LOOP_FREQUENCY);
 	int32_t dLim	=	(mDac/CONTROL_LOOP_FREQUENCY);
-	int32_t wMax	= 1600;
+	int32_t wMax	= 100;
 	
 	//Position and angular velocity 
 	int32_t stepAct  = 0;			//Actual step count of motor [pulse]
@@ -86,9 +86,14 @@ void vTaskMotorController(void *pvParameters)
 		//rate limiting 
 		if(e>0)
 		{
+			//Movement in positive direction
 			if((wRef-wAct)>rLim)
 			{
 				wNew = wAct+rLim;
+			}
+			else if ((wAct - wRef) > dLim)
+			{
+				wNew = wAct-dLim;
 			}
 			else
 			{
@@ -97,9 +102,14 @@ void vTaskMotorController(void *pvParameters)
 		}
 		else if (e < 0)
 		{
-			if((wAct - wRef) > dLim)
+			//Movement in negative direction
+			if((wAct - wRef) > rLim)
 			{
-				wNew = wAct-dLim;
+				wNew = wAct-rLim;
+			}
+			else if ((wRef-wAct)> dLim)
+			{
+				wNew = wAct+dLim;
 			}
 			else
 			{
@@ -132,11 +142,12 @@ void vTaskMotorController(void *pvParameters)
 		}
 		else
 		{
-			delta = (TIMER_FREQUENCY*PERIOD/(2*absVal(wNew)));	//2 because it has to turn the step pin on and off in real delta time
+			/*delta = (TIMER_FREQUENCY*PERIOD/(2*absVal(wNew)));	//2 because it has to turn the step pin on and off in real delta time
 			if(delta > PERIOD)
 			{
 			  delta = -1;
-			}
+			} */
+			delta = (PERIOD/(2*absVal(wNew)));
 			direction = sign(wNew);
 		}
 		
